@@ -1,0 +1,23 @@
+<div class="example-action-buttons">
+  <button mat-button (click)="accordion.openAll()">Expand All</button>
+  <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+</div>
+<mat-accordion class="example-headers-align" multi>
+  <mat-expansion-panel *ngFor="let cat of categories">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{cat.name}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+
+    <div>
+      <div>
+      <label>NAME</label>
+        <label>THREADS </label>
+          <label>REPLIES</label>
+            <label>LAST POST</label>
+      </div>
+    </div>
+
+  </mat-expansion-panel>
+</mat-accordion>

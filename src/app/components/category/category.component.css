@@ -10,3 +10,47 @@
 .example-headers-align .mat-mdc-form-field + .mat-mdc-form-field {
   margin-left: 8px;
 }
+.Category-container {
+  width: 55.5%;
+  margin: auto;
+  border-radius: 8px;
+  padding: 15px 0px 15px 10px;
+  background-color: #673ab7;
+  color: white;
+  margin-top: 30px;
+}
+
+.mat-expansion-panel-header.mat-expanded,
+.mat-expansion-panel-header.mat-expanded:hover,
+.mat-expansion-panel-header.mat-expanded:focus {
+  width: 55.5%;
+  margin: auto;
+  border-radius: 8px;
+  padding: 15px 0px 15px 10px;
+  background-color: #673ab7;
+  color: white;
+  margin-top: 30px;
+}
+.mat-expansion-panel-body {
+  padding: 0;
+}
+
+.removePadding{
+  padding: 0 !important;
+}
+
+.Category-container:hover{
+  background-color: #8b4eff;
+}
+
+.CategoryName{
+  flex-grow: 1;
+}
+
+.SubCategory-stripe {
+  width: 55%;
+  margin: auto;
+  background-color: #3f51b5;
+  border: #3f51b5;
+  color: white;
+}

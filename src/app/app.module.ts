@@ -7,11 +7,13 @@ import {CategoryComponent} from "./components/category/category.component";
 import {HttpClientModule} from "@angular/common/http";
 import { MaterialModule } from './mat-module';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { SubCategoryComponent } from './components/sub-category/sub-category.component';
 @NgModule({
   declarations: [
     AppComponent,
     CategoryComponent,
-    NavbarComponent
+    NavbarComponent,
+    SubCategoryComponent
   ],
     imports: [
         BrowserModule,

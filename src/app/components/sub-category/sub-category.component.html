@@ -1,1 +1,3 @@
-<div class="SubCategory-container" *ngFor="let subcat of subCategories">{{subcat.name}}</div>
+<div class="SubCategory-container" *ngFor="let subcat of subCategories">
+  <a [routerLink]="['/SubCategory',subcat.idSubcategory]">{{subcat.name}}</a>
+</div>

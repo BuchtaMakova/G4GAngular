@@ -1,0 +1,22 @@
+<div class="Comment-height" *ngFor="let com of comments">
+  <div class="Content-left-side">
+    <div>
+      <h5>{{com.account?.username}}</h5>
+    </div>
+    <div>posts: {{com.account?.commentsPosted}}</div>
+    <div>
+      replies: {{com.account?.contentsPosted}}
+    </div>
+  </div>
+  <div class="Content-right-side">
+    <div>
+      <h3>1</h3>
+    </div>
+    <div class="Thread">{{com.text}}</div>
+    <div>
+      <label>
+        {{com.posted}}
+      </label>
+    </div>
+  </div>
+</div>

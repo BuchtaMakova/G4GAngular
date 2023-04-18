@@ -1,2 +1,20 @@
 <p>content works!</p>
 {{idSubcategory}}
+
+<div class="Category-container shadow">ahoj</div>
+<div class="SubCategory-container shadow mb-3">
+  <div class="ContentCard-stripe">
+    <div>
+      <div>
+      <label>NAME</label>
+        <label>REPLIES</label>
+          <label>AUTHOR</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="SubCategory-container" *ngFor="let content of contents">
+    <a [routerLink]="['/Content',content.idContent]">{{content.headline}}</a>
+  </div>
+
+</div>

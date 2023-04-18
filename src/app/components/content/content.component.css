@@ -1,0 +1,24 @@
+.Category-container {
+  width: 55.5%;
+  margin: auto;
+  border-radius: 8px;
+  text-align: left;
+  padding: 15px 0px 15px 10px;
+  background-color: #673ab7;
+  color: white;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.SubCategory-container {
+  width: 54.8%;
+  margin: auto;
+  background-color: white;
+}
+
+.ContentCard-stripe {
+  background-color: #3f51b5;
+  border: #3f51b5;
+  color: white;
+}

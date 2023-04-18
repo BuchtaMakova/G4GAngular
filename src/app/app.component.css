@@ -10,6 +10,24 @@ h2, h3 {
 }
 body {
   margin: 0;
+  background-image: linear-gradient(
+    to left top,
+    #271b27,
+    #321c34,
+    #3c1d42,
+    #451d52,
+    #4d1e62,
+    #4d1d61,
+    #4c1d60,
+    #4c1c5f,
+    #431b4c,
+    #381a3b,
+    #2c192c,
+    #1f171e
+  );
+  background-size: cover;
+  background-position: top;
+  height: 100vh;
 }
 body, input[type="text"], button {
   color: #333;

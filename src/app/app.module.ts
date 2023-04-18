@@ -10,10 +10,13 @@ import { MaterialModule } from './mat-module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SubCategoryComponent } from './components/sub-category/sub-category.component';
 import { ContentComponent } from './components/content/content.component';
+import { ContentDetailComponent } from './components/content-detail/content-detail.component';
+import { CommentComponent } from './components/comment/comment.component';
 
 const routes: Routes = [
   {path: '', component:CategoryComponent},
-  {path: 'SubCategory/:idSubcategory', component:ContentComponent}
+  {path: 'SubCategory/:idSubcategory', component:ContentComponent},
+  {path: 'Content/:idContent', component:ContentDetailComponent}
 ];
 @NgModule({
   declarations: [
@@ -21,7 +24,9 @@ const routes: Routes = [
     CategoryComponent,
     NavbarComponent,
     SubCategoryComponent,
-    ContentComponent
+    ContentComponent,
+    ContentDetailComponent,
+    CommentComponent
   ],
     imports: [
       [RouterModule.forRoot(routes)],

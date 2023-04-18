@@ -6,6 +6,8 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./sub-category.component.css']
 })
 export class SubCategoryComponent {
+
+
   @Input() subCategories: any [] = [];
 
 }

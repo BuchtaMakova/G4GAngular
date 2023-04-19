@@ -1,6 +1,8 @@
-<p>content works!</p>
-{{idSubcategory}}
-
+<div>
+<div class="Form-container">
+<app-create-content></app-create-content>
+</div>
+</div>
 <div class="Category-container shadow">ahoj</div>
 <div class="SubCategory-container shadow mb-3">
   <div class="ContentCard-stripe">
@@ -15,6 +17,7 @@
 
   <div class="SubCategory-container" *ngFor="let content of contents">
     <a [routerLink]="['/Content',content.idContent]">{{content.headline}}</a>
+    <span>{{content.commentsCount}}</span>
   </div>
 
 </div>

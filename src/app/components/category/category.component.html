@@ -1,8 +1,8 @@
 <div class="example-action-buttons">
-  <button mat-button (click)="accordion.openAll()">Expand All</button>
-  <button mat-button (click)="accordion.closeAll()">Collapse All</button>
+  <button (click)="accordion.openAll()">Expand All</button>
+  <button (click)="accordion.closeAll()">Collapse All</button>
 </div>
-<mat-accordion class="example-headers-align" multi>
+<mat-accordion multi>
   <mat-expansion-panel *ngFor="let cat of categories" class="removePadding">
     <mat-expansion-panel-header class="Category-container">
       <mat-panel-title class="CategoryName">

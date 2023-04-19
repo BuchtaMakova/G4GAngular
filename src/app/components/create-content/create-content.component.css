@@ -1,0 +1,29 @@
+.example-form {
+  width: 60%;
+}
+
+.example-full-width {
+  width: 100%;
+
+}
+
+input{
+  height: 100px;
+}
+
+form{
+  background-color: transparent;
+}
+
+textarea{
+  min-height: 150px;
+  max-height: 330px;
+}
+
+h1{
+  color: white;
+}
+
+.Filter-post-container {
+
+}

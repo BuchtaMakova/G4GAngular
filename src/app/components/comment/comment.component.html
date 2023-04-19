@@ -1,4 +1,4 @@
-<div class="Comment-height" *ngFor="let com of comments">
+<div class="Comment-height" *ngFor="let com of comments; let i = index">
   <div class="Content-left-side">
     <div>
       <h5>{{com.account?.username}}</h5>
@@ -10,7 +10,7 @@
   </div>
   <div class="Content-right-side">
     <div>
-      <h3>1</h3>
+      <h3>#{{i+1}}</h3>
     </div>
     <div class="Thread">{{com.text}}</div>
     <div>

@@ -1,0 +1,15 @@
+
+<button mat-raised-button color="primary" (click)="Account()">get me</button>
+<form [formGroup]="loginData" class="example-form" (ngSubmit)="onLogin()">
+  <h1>Form</h1>
+  <mat-form-field class="example-full-width">
+    <mat-label>username</mat-label>
+    <input matInput formControlName="username" placeholder="Write down an username">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>password</mat-label>
+    <input matInput formControlName="password" type="password" placeholder="Write down a password">
+  </mat-form-field>
+  <button mat-raised-button type="submit" color="primary">post</button>
+</form>

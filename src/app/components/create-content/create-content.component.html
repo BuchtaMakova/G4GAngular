@@ -1,5 +1,6 @@
 <div>
-<form [formGroup]="createContent" class="example-form" (ngSubmit)="onSubmit()">
+  <button mat-raised-button (click)="displayElement = !displayElement" color="primary">Create post</button>
+<form [formGroup]="createContent" class="example-form" *ngIf="displayElement" (ngSubmit)="onSubmit()">
   <h1>Form</h1>
   <mat-form-field class="example-full-width">
     <mat-label>Headline</mat-label>
@@ -10,6 +11,6 @@
     <mat-label>Text</mat-label>
     <textarea matInput formControlName="text" placeholder="Write down a text"></textarea>
   </mat-form-field>
-  <button mat-raised-button type="submit" color="primary">CREATE</button>
+  <button mat-raised-button type="submit" color="primary">post</button>
 </form>
 </div>

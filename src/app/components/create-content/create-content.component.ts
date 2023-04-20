@@ -12,9 +12,12 @@ export class CreateContentComponent {
     text: new FormControl('', [Validators.required]),
   });
 
+  displayElement = false;
+
   onSubmit() {
     if (this.createContent.valid) {
       console.log('Form Submitted!');
+      this.displayElement = false;
       this.createContent.reset();
     }
   }

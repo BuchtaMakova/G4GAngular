@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoryComponent } from './components/category/category.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MaterialModule } from './mat-module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SubCategoryComponent } from './components/sub-category/sub-category.component';
@@ -13,6 +13,8 @@ import { ContentComponent } from './components/content/content.component';
 import { ContentDetailComponent } from './components/content-detail/content-detail.component';
 import { CommentComponent } from './components/comment/comment.component';
 import { CreateContentComponent } from './components/create-content/create-content.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptor } from './services/auth.interceptor';
 
 const routes: Routes = [
   { path: '', component: CategoryComponent },
@@ -29,6 +31,7 @@ const routes: Routes = [
     ContentDetailComponent,
     CommentComponent,
     CreateContentComponent,
+    LoginComponent,
   ],
   imports: [
     [RouterModule.forRoot(routes)],
@@ -40,7 +43,13 @@ const routes: Routes = [
     ReactiveFormsModule,
   ],
   exports: [RouterModule],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

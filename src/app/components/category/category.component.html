@@ -2,9 +2,6 @@
   <button (click)="accordion.openAll()">Expand All</button>
   <button (click)="accordion.closeAll()">Collapse All</button>
 </div>
-<div>
-  <app-login></app-login>
-</div>
 <mat-accordion multi>
   <mat-expansion-panel *ngFor="let cat of categories" class="removePadding">
     <mat-expansion-panel-header class="Category-container">

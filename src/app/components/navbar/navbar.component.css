@@ -6,5 +6,24 @@
 a {
   color: white;
   text-decoration: none;
+flex: 1;
 }
 
+.loginButton{
+  float: right;
+}
+
+.loginButtonContainer{
+flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.userName{
+  float: right;
+}
+
+mat-toolbar-single-row{
+  justify-content: space-between !important;
+}

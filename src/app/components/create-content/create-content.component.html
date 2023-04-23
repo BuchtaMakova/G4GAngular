@@ -1,5 +1,5 @@
 <div>
-  <button mat-raised-button (click)="displayElement = !displayElement" color="primary">Create post</button>
+  <button mat-raised-button (click)="displayElement = !displayElement"  [disabled]="!isLoggedIn" color="primary">Create post</button>
 <form [formGroup]="createContent" class="example-form" *ngIf="displayElement" (ngSubmit)="onSubmit()">
   <h1>Form</h1>
   <mat-form-field class="example-full-width">

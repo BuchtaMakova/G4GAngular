@@ -1,3 +1,9 @@
 <mat-toolbar color="primary">
   <a routerLink="">G4G</a>
+  <div class="loginButtonContainer">
+    <div *ngIf="isLoggedIn" class="userName">{{user}}</div>
+  <button mat-raised-button (click)="openDialog()" *ngIf="!isLoggedIn" class="loginButton">Login</button>
+    <button mat-raised-button (click)="logOut()" *ngIf="isLoggedIn" class="loginButton">Logout</button>
+  </div>
+
 </mat-toolbar>

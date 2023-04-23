@@ -27,3 +27,9 @@ h1{
 .Filter-post-container {
 
 }
+
+.mat-mdc-raised-button:disabled{
+  background-color: #fff;
+  color: black;
+  opacity: 0.5;
+}

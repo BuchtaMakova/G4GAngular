@@ -1,0 +1,25 @@
+.close-button{
+  float: right;
+}
+
+.close-button:hover{
+  transform: rotate(180deg) !important;
+  transition: 1s ease-in-out !important;
+}
+
+.login-container{
+  padding: 10px;
+}
+
+.example-full-width {
+  width: 100%;
+
+}
+
+.postButton{
+  float: right;
+}
+
+input{
+  height: 100px;
+}

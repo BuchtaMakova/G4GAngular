@@ -19,11 +19,14 @@ export class NavbarComponent implements OnInit {
   isLoggedIn: boolean = false;
   logInOut: boolean = false;
   ngOnInit(): void {
+    debugger;
     if (!!this.token) this.accountService.updateIsLoggedIn(true);
     this.accountService.isLoggedIn$.subscribe((isLoggedIn) => {
       this.isLoggedIn = isLoggedIn;
       console.log(this.isLoggedIn);
-      this.Account();
+      if (this.accountService.isLoggedIn$.getValue()) {
+        this.Account();
+      }
     });
   }
 

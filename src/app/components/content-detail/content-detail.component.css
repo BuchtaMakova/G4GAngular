@@ -22,3 +22,22 @@
   word-break: break-all;
 }
 
+.CreateCommentContainer{
+display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.CreateComment{
+
+}
+
+textarea{
+  min-height: 150px;
+  max-height: 330px;
+  width: 100%;
+}
+
+form{
+  width: 55%;
+}

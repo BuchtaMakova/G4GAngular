@@ -27,14 +27,15 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
     return next.handle(req).pipe(
-      map((event: HttpEvent<any>) => {
-        if (event instanceof HttpResponse) {
-          if (event.status === 401) {
+      catchError((error: HttpErrorResponse) => {
+        if (error.status === 401) {
+          console.log('lol' + this.accService.isLoggedIn$.getValue());
+          if (this.accService.isLoggedIn$.getValue()) {
             this.accService.logOut();
             throw new Error('invalid token');
           }
         }
-        return event;
+        return throwError(error);
       })
     );
   }

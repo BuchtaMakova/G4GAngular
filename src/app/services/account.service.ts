@@ -8,10 +8,9 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 export class AccountService {
   constructor(private http: HttpClient) {}
 
-  private isLoggedInSubject: Subject<boolean> = new BehaviorSubject<boolean>(
-    false
-  );
-  isLoggedIn$ = this.isLoggedInSubject.asObservable();
+  private isLoggedInSubject: BehaviorSubject<boolean> =
+    new BehaviorSubject<boolean>(false);
+  isLoggedIn$ = this.isLoggedInSubject;
 
   // update the isLoggedInSubject to emit a new boolean value
   updateIsLoggedIn(value: boolean) {
@@ -32,6 +31,7 @@ export class AccountService {
 
   logOut() {
     this.updateIsLoggedIn(false);
+    console.log('logOut');
     localStorage.removeItem('jwt');
     localStorage.removeItem('username');
   }

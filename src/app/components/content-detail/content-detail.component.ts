@@ -1,14 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-content-detail',
   templateUrl: './content-detail.component.html',
   styleUrls: ['./content-detail.component.css'],
 })
-export class ContentDetailComponent {
+export class ContentDetailComponent implements OnInit {
   idContent: string | null | undefined;
+
+  createComment = new FormGroup({
+    headline: new FormControl('', [Validators.required]),
+    text: new FormControl('', [Validators.required]),
+  });
 
   contentDetails: any = {};
 
@@ -37,5 +43,12 @@ export class ContentDetailComponent {
   ngOnInit() {
     this.idContent = this.route.snapshot.paramMap.get('idContent');
     this.fetchContentDetails();
+  }
+
+  onSubmit() {
+    if (this.createComment.valid) {
+      console.log('Form Submitted!');
+      this.createComment.reset();
+    }
   }
 }

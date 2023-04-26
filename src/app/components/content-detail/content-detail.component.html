@@ -24,3 +24,12 @@
 
 <app-comment [comments]="contentDetails.comment"></app-comment>
 
+<div class="CreateCommentContainer">
+<form [formGroup]="createComment" class="CreateComment" (ngSubmit)="onSubmit()">
+  <mat-form-field class="example-full-width">
+    <mat-label>Text</mat-label>
+    <textarea matInput formControlName="text" placeholder="Write down a text"></textarea>
+  </mat-form-field>
+  <button mat-raised-button type="submit" color="primary">post</button>
+</form>
+</div>

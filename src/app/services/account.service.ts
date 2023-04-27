@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, map, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +11,8 @@ export class AccountService {
   private isLoggedInSubject: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this.isLoggedInSubject;
+
+  account: any[] = [];
 
   // update the isLoggedInSubject to emit a new boolean value
   updateIsLoggedIn(value: boolean) {
@@ -29,10 +31,17 @@ export class AccountService {
     );
   }
 
+  getIdAccount(username: any): Observable<number> {
+    return this.http
+      .get<any>('https://localhost:7100/api/Users/ByUsername?name=' + username)
+      .pipe(map((response) => response.idAccount));
+  }
+
   logOut() {
     this.updateIsLoggedIn(false);
     console.log('logOut');
     localStorage.removeItem('jwt');
     localStorage.removeItem('username');
+    localStorage.removeItem('idAccount');
   }
 }

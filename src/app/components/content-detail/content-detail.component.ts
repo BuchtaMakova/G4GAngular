@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AccountService } from '../../services/account.service';
+import { ContentService } from '../../services/content.service';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-content-detail',
@@ -10,13 +13,15 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class ContentDetailComponent implements OnInit {
   idContent: string | null | undefined;
-
-  createComment = new FormGroup({
-    headline: new FormControl('', [Validators.required]),
-    text: new FormControl('', [Validators.required]),
-  });
+  isLoggedIn: boolean = false;
 
   contentDetails: any = {};
+
+  createComment = new FormGroup({
+    text: new FormControl({ value: '', disabled: false }, [
+      Validators.required,
+    ]),
+  });
 
   fetchContentDetails() {
     const url =
@@ -36,17 +41,37 @@ export class ContentDetailComponent implements OnInit {
       }
     );
   }
-  constructor(private route: ActivatedRoute, private http: HttpClient) {
+  constructor(
+    private route: ActivatedRoute,
+    private http: HttpClient,
+    private accountService: AccountService,
+    private contentSevice: ContentService
+  ) {
     this.route = route;
   }
 
+  commentInfo: any;
   ngOnInit() {
     this.idContent = this.route.snapshot.paramMap.get('idContent');
     this.fetchContentDetails();
+    this.accountService.isLoggedIn$.subscribe((isLoggedIn) => {
+      this.isLoggedIn = isLoggedIn;
+      console.log(this.isLoggedIn);
+    });
   }
 
   onSubmit() {
     if (this.createComment.valid) {
+      this.commentInfo = {
+        text: this.createComment.value.text,
+        posted:
+          formatDate(new Date(), 'yyyy-MM-dd', 'en-US', 'Europe/Prague') +
+          'T' +
+          formatDate(new Date(), 'HH:mm:ss', 'en-US', 'Europe/Prague'),
+        accountIdAccount: localStorage.getItem('idAccount'),
+        contentIdContent: this.idContent,
+      };
+      this.contentSevice.createComment(this.commentInfo);
       console.log('Form Submitted!');
       this.createComment.reset();
     }

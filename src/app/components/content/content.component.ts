@@ -1,32 +1,32 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {HttpClient, HttpHeaders} from "@angular/common/http";
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
-  styleUrls: ['./content.component.css']
+  styleUrls: ['./content.component.css'],
 })
-export class ContentComponent implements OnInit{
+export class ContentComponent implements OnInit {
+  contents: any[] = [];
 
-  contents: any[]=[];
-
-  idSubcategory: string | null | undefined;
-  constructor(private route: ActivatedRoute,private http:HttpClient) {
+  idSubcategory: any;
+  constructor(private route: ActivatedRoute, private http: HttpClient) {
     this.route = route;
   }
   ngOnInit() {
     this.idSubcategory = this.route.snapshot.paramMap.get('idSubcategory');
-    this.fetchContents();
+    if (this.idSubcategory !== null) {
+      this.fetchContents();
+    }
   }
 
-  fetchContents(){
-    const url = 'https://localhost:7100/api/Contents/GetContents?subcategoryIdSubcategory='+this.idSubcategory;
+  fetchContents() {
+    const url =
+      'https://localhost:7100/api/Contents/GetContents?subcategoryIdSubcategory=' +
+      this.idSubcategory;
     let header = {
-      headers: new HttpHeaders().set(
-        'Authorization',
-        'Bearer ' + ""
-      ),
+      headers: new HttpHeaders().set('Authorization', 'Bearer ' + ''),
     };
     this.http.get<any>(url, header).subscribe(
       (response: any) => {
@@ -39,5 +39,4 @@ export class ContentComponent implements OnInit{
       }
     );
   }
-
 }

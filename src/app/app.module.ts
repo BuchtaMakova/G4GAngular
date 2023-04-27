@@ -15,11 +15,13 @@ import { CommentComponent } from './components/comment/comment.component';
 import { CreateContentComponent } from './components/create-content/create-content.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './services/auth.interceptor';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   { path: '', component: CategoryComponent },
   { path: 'SubCategory/:idSubcategory', component: ContentComponent },
   { path: 'Content/:idContent', component: ContentDetailComponent },
+  { path: 'Profile', component: ProfileComponent },
 ];
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ const routes: Routes = [
     CommentComponent,
     CreateContentComponent,
     LoginComponent,
+    ProfileComponent,
   ],
   imports: [
     [RouterModule.forRoot(routes)],

@@ -4,9 +4,9 @@
     <div>
       <h5>{{contentDetails.account?.username}}</h5>
     </div>
-    <div>posts: {{contentDetails.account?.commentsPosted}}</div>
+    <div>posts: {{contentDetails.account?.contentsPosted}}</div>
     <div>
-      replies: {{contentDetails.account?.contentsPosted}}
+      replies: {{contentDetails.account?.commentsPosted}}
     </div>
   </div>
   <div class="Content-right-side">
@@ -26,10 +26,11 @@
 
 <div class="CreateCommentContainer">
 <form [formGroup]="createComment" class="CreateComment" (ngSubmit)="onSubmit()">
-  <mat-form-field class="example-full-width">
+  <mat-form-field class="example-full-width" >
     <mat-label>Text</mat-label>
     <textarea matInput formControlName="text" placeholder="Write down a text"></textarea>
   </mat-form-field>
-  <button mat-raised-button type="submit" color="primary">post</button>
+  <button mat-raised-button type="submit" [disabled]="!isLoggedIn" color="primary">post</button>
 </form>
 </div>
+

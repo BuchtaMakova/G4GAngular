@@ -5,6 +5,8 @@
   margin: auto;
   border-radius: 15px;
   word-wrap: break-word;
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 .Content-left-side {
@@ -23,13 +25,13 @@
 }
 
 .CreateCommentContainer{
-display: flex;
-  justify-content: center;
   margin-top: 20px;
+  margin-bottom: 100px;
 }
 
 .CreateComment{
-
+  width: 55%;
+  margin: auto;
 }
 
 textarea{
@@ -38,6 +40,12 @@ textarea{
   width: 100%;
 }
 
-form{
-  width: 55%;
+.example-full-width{
+  width: 100%;
+}
+
+.mat-mdc-raised-button:disabled{
+  background-color: #3f51b5;
+  color: white;
+  opacity: 0.5;
 }

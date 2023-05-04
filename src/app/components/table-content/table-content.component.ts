@@ -17,11 +17,13 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class TableContentComponent implements AfterViewInit, OnInit {
   @Input() dataSource: any = [];
+
   displayedColumns: string[] = ['text', 'posted'];
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {}
   @ViewChild(MatSort) sort: MatSort | undefined;
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
+  lengthTable: any;
 
   ngOnInit() {
     this.dataSource = new MatTableDataSource(this.dataSource);

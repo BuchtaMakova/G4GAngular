@@ -19,12 +19,14 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { TableCommentComponent } from './components/table-comment/table-comment.component';
 import { MatSortModule } from '@angular/material/sort';
 import { TableContentComponent } from './components/table-content/table-content.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   { path: '', component: CategoryComponent },
   { path: 'SubCategory/:idSubcategory', component: ContentComponent },
   { path: 'Content/:idContent', component: ContentDetailComponent },
   { path: 'Profile', component: ProfileComponent },
+  { path: 'Register', component: RegisterComponent },
 ];
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ const routes: Routes = [
     ProfileComponent,
     TableCommentComponent,
     TableContentComponent,
+    RegisterComponent,
   ],
   imports: [
     [RouterModule.forRoot(routes)],

@@ -19,6 +19,7 @@ export class ProfileComponent implements OnInit {
   isLoggedIn: boolean = false;
   dataSource: any = [];
   dataSourceContent: any = [];
+  length: number = 0;
   ngOnInit(): void {
     this.accountService.isLoggedIn$.subscribe((isLoggedIn) => {
       this.isLoggedIn = isLoggedIn;

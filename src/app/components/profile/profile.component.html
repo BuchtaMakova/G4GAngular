@@ -1,4 +1,4 @@
-<div>
+<div class="upper">
 <div class="numera">
   <label class="numero">{{user?.commentsPosted}}</label>
   <label class="numero">{{user?.contentsPosted}}</label>
@@ -10,9 +10,15 @@
 </div>
 <div class="tejbl">
   <mat-tab-group>
-    <mat-tab label="First"><app-table-comment [dataSource]="dataSource"></app-table-comment></mat-tab>
-    <mat-tab label="Second"><app-table-content [dataSource]="comments"></app-table-content></mat-tab>
-
-
+    <mat-tab label="First">
+      <div class="contentTable">
+        <app-table-comment [dataSource]="dataSource"/>
+      </div>
+    </mat-tab>
+    <mat-tab label="Second">
+      <div class="contentTable">
+        <app-table-content [dataSource]="comments"/>
+      </div>
+    </mat-tab>
   </mat-tab-group>
 </div>

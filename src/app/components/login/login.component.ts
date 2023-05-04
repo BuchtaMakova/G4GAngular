@@ -24,10 +24,14 @@ export class LoginComponent {
         this.accService.updateIsLoggedIn(true);
         console.log(localStorage.getItem('username'));
         console.log('Form Submitted!');
-        this.dialog.closeAll();
+        this.closeDialog();
         this.loginData.reset();
       });
     }
+  }
+
+  closeDialog() {
+    this.dialog.closeAll();
   }
 
   protected readonly AccountService = AccountService;

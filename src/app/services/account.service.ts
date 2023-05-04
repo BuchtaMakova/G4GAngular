@@ -37,6 +37,12 @@ export class AccountService {
       .pipe(map((response) => response.idAccount));
   }
 
+  register(obj: any): Observable<any> {
+    return this.http.post('https://localhost:7100/api/Users/Create', obj, {
+      responseType: 'text',
+    });
+  }
+
   logOut() {
     this.updateIsLoggedIn(false);
     console.log('logOut');

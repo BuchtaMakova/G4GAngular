@@ -32,3 +32,32 @@
   width: 50%;
   margin:auto;
 }
+
+.upper{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+
+.contentTable{
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+.mat-tab-label {
+
+  color: red!important;
+
+}
+
+/* Styles for the active tab label */
+.mat-tab-label.mat-tab-label-active {
+  color: red!important;
+}
+
+/* Styles for the ink bar */
+.mat-ink-bar {
+  background-color: green!important;
+}
+
+

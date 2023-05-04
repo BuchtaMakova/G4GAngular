@@ -1,0 +1,30 @@
+<div class="login-container">
+  <form [formGroup]="loginData" class="example-form" (ngSubmit)="onRegister()">
+    <h1>Login</h1>
+    <mat-form-field class="example-full-width">
+      <mat-label>username</mat-label>
+      <input matInput formControlName="username" placeholder="Write down an username">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>password</mat-label>
+      <input matInput formControlName="password" type="password" placeholder="Write down a password">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>second password</mat-label>
+      <input matInput formControlName="password2" type="password" placeholder="second password">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Choose a date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthDate">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <button mat-raised-button type="submit" class="postButton" color="primary">post</button>
+  </form>
+
+</div>

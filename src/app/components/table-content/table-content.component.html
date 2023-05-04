@@ -1,3 +1,7 @@
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput placeholder="Search columns" #input>
+</mat-form-field>
 <table mat-table [dataSource]="dataSource" matSort matSortActive="headline" matSortDirection="asc" (matSortChange)="announceSortChange($event)"
        class="mat-elevation-z8">
 

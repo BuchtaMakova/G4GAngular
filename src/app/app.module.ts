@@ -16,6 +16,9 @@ import { CreateContentComponent } from './components/create-content/create-conte
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './services/auth.interceptor';
 import { ProfileComponent } from './components/profile/profile.component';
+import { TableCommentComponent } from './components/table-comment/table-comment.component';
+import { MatSortModule } from '@angular/material/sort';
+import { TableContentComponent } from './components/table-content/table-content.component';
 
 const routes: Routes = [
   { path: '', component: CategoryComponent },
@@ -35,6 +38,8 @@ const routes: Routes = [
     CreateContentComponent,
     LoginComponent,
     ProfileComponent,
+    TableCommentComponent,
+    TableContentComponent,
   ],
   imports: [
     [RouterModule.forRoot(routes)],
@@ -44,6 +49,7 @@ const routes: Routes = [
     MaterialModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    MatSortModule,
   ],
   exports: [RouterModule],
   providers: [

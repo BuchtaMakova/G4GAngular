@@ -1,0 +1,15 @@
+.mat-column-text{
+  max-width: 60px !important;
+  min-width: 60px !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mat-column-headline{
+  max-width: 60px !important;
+  min-width: 60px !important;
+}
+.mat-column-posted{
+  max-width: 60px !important;
+  min-width: 60px !important;
+}

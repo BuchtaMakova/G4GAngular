@@ -15,10 +15,19 @@ import { DatePipe } from '@angular/common';
 export class ContentDetailComponent implements OnInit {
   idContent: string | null | undefined;
   isLoggedIn: boolean = false;
-
+  public user: any;
+  userId: any;
+  token = localStorage.getItem('jwt');
   contentDetails: any = {};
+  displayElement = false;
 
   createComment = new FormGroup({
+    text: new FormControl({ value: '', disabled: false }, [
+      Validators.required,
+    ]),
+  });
+
+  updateContent = new FormGroup({
     text: new FormControl({ value: '', disabled: false }, [
       Validators.required,
     ]),
@@ -53,12 +62,48 @@ export class ContentDetailComponent implements OnInit {
   }
 
   commentInfo: any;
+  contentInfo: any;
   ngOnInit() {
     this.idContent = this.route.snapshot.paramMap.get('idContent');
     this.fetchContentDetails();
+
+    if (!!this.token) this.accountService.updateIsLoggedIn(true);
     this.accountService.isLoggedIn$.subscribe((isLoggedIn) => {
       this.isLoggedIn = isLoggedIn;
       console.log(this.isLoggedIn);
+      if (this.accountService.isLoggedIn$.getValue()) {
+        this.accountService
+          .getAccount(localStorage.getItem('username'))
+          .subscribe(
+            (response: any) => {
+              this.user = response.username;
+              this.userId = response.idAccount;
+              localStorage.setItem('idAccount', response.idAccount);
+            },
+            (error: any) => {
+              if (error.status == 401) {
+                console.log(error);
+              }
+            }
+          );
+      }
+    });
+  }
+
+  onUpdateContent() {
+    this.contentInfo = {
+      id: this.contentDetails.idContent,
+      headline: this.contentDetails.headline,
+      text: this.updateContent.value.text,
+      accountIdAccount: this.userId,
+      subcategoryIdSubcategory: this.contentDetails.subcategoryIdSubcategory,
+    };
+
+    this.contentSevice.updateContent(this.contentInfo).then(() => {
+      console.log('Post updated');
+      this.updateContent.reset();
+      this.fetchContentDetails();
+      this.displayElement = false;
     });
   }
 

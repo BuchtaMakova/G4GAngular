@@ -1,5 +1,9 @@
 
-<div class="Content-height">
+<div class="Container-content-height">
+  <div class="Burton">
+  <button mat-raised-button *ngIf="isLoggedIn&&contentDetails.account?.username==this.user" class="loginButton" color="primary" (click)="displayElement = !displayElement">UPDATE</button>
+  </div>
+  <div class="Content-height">
   <div class="Content-left-side">
     <div>
       <h5>{{contentDetails.account?.username}}</h5>
@@ -15,12 +19,20 @@
     <div>
       <h3>{{contentDetails.headline}}</h3>
     </div>
-    <div class="Thread">{{contentDetails.text}}</div>
+    <div class="Thread" *ngIf="!displayElement">{{contentDetails.text}}</div>
+    <form [formGroup]="updateContent" *ngIf="displayElement" (ngSubmit)="onUpdateContent()">
+      <mat-form-field class="example-full-width" >
+        <mat-label>Text</mat-label>
+        <textarea class="updateTextArea" autosize matInput formControlName="text" placeholder="Write down a text" [(ngModel)]="contentDetails.text"></textarea>
+      </mat-form-field>
+      <button mat-raised-button type="submit" [disabled]="!isLoggedIn" color="primary">post</button>
+    </form>
     <div class="Posted">
       <label>
         {{formatDate(contentDetails.posted)}}
       </label>
     </div>
+  </div>
   </div>
 </div>
 
@@ -30,7 +42,7 @@
 <form [formGroup]="createComment" class="CreateComment" (ngSubmit)="onSubmit()">
   <mat-form-field class="example-full-width" >
     <mat-label>Text</mat-label>
-    <textarea matInput formControlName="text" placeholder="Write down a text"></textarea>
+    <textarea class="commentTextArea" matInput formControlName="text" placeholder="Write down a text"></textarea>
   </mat-form-field>
   <button mat-raised-button type="submit" [disabled]="!isLoggedIn" color="primary">post</button>
 </form>

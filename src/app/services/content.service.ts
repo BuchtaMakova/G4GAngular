@@ -20,6 +20,12 @@ export class ContentService {
       .toPromise();
   }
 
+  updateContent(obj: any) {
+    return this.http
+      .put('https://localhost:7100/api/Contents/Update', obj)
+      .toPromise();
+  }
+
   createComment(obj: any) {
     return this.http
       .post('https://localhost:7100/api/Comments/Create', obj)

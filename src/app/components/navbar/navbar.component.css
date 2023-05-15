@@ -13,6 +13,11 @@ flex: 1;
   float: right;
 }
 
+.profileButton{
+  float: right;
+  margin-right: 10px;
+}
+
 .loginButtonContainer{
 flex: 1;
   display: flex;
@@ -22,8 +27,14 @@ flex: 1;
 
 .userName{
   float: right;
+  margin-right: 10px;
 }
 
 mat-toolbar-single-row{
   justify-content: space-between !important;
+
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row{
+  padding: 0 60px !important;
 }

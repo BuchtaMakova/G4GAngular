@@ -1,12 +1,21 @@
 .Content-height {
   min-height: 200px;
   display: flex;
-  width: 55%;
-  margin: auto;
+
+
   border-radius: 15px;
   word-wrap: break-word;
   margin-top: 20px;
   margin-bottom: 50px;
+}
+
+.Burton{
+  margin-top: 20px;
+}
+
+.Container-content-height{
+  width: 55%;
+  margin: auto;
 }
 
 .Content-left-side {
@@ -40,7 +49,12 @@
   margin: auto;
 }
 
-textarea{
+
+.updateTextArea{
+  width: 100%;
+}
+
+.commentTextArea{
   min-height: 150px;
   max-height: 330px;
   width: 100%;

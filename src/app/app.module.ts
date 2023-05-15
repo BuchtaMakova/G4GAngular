@@ -21,6 +21,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { TableContentComponent } from './components/table-content/table-content.component';
 import { RegisterComponent } from './components/register/register.component';
 import { DatePipe } from '@angular/common';
+import { AutosizeModule } from 'ngx-autosize';
 
 const routes: Routes = [
   { path: '', component: CategoryComponent },
@@ -54,6 +55,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     ReactiveFormsModule,
     MatSortModule,
+    AutosizeModule,
   ],
   exports: [RouterModule],
   providers: [

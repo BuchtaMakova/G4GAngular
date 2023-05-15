@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AccountService } from '../../services/account.service';
 import { ContentService } from '../../services/content.service';
@@ -11,6 +11,7 @@ import { formatDate } from '@angular/common';
 })
 export class CreateContentComponent implements OnInit {
   @Input() idSubcategory = '';
+  @Output() submitEvent = new EventEmitter<any>();
 
   createContent = new FormGroup({
     headline: new FormControl('', [Validators.required]),
@@ -60,10 +61,12 @@ export class CreateContentComponent implements OnInit {
         accountIdAccount: this.account,
         subcategoryIdSubcategory: Number(this.idSubcategory),
       };
-      this.contentService.createContent(this.contentInfo);
-      console.log('Createcontent form');
-      this.displayElement = false;
-      this.createContent.reset();
+      this.contentService.createContent(this.contentInfo).then(() => {
+        console.log('Createcontent form');
+        this.displayElement = false;
+        this.createContent.reset();
+        this.submitEvent.emit();
+      });
     }
   }
 }

@@ -15,15 +15,48 @@
   width: 54.8%;
   margin: auto;
   background-color: white;
+
+}
+
+.SubCategory-container-stuff {
+  background-color: white;
+  display: flex;
+  padding: 10px;
+  border: 1px solid #e7e7e7;
 }
 
 .ContentCard-stripe {
   background-color: #3f51b5;
   border: #3f51b5;
   color: white;
+  display: flex;
+  padding: 10px;
 }
 
 .Form-container{
   width: 55%;
   margin: auto;
 }
+
+label{
+  flex: 1;
+}
+
+.Count{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Author{
+  flex: 1;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.Text{
+  flex: 3;
+  align-items: center;
+}
+

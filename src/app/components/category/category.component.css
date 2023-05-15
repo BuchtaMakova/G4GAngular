@@ -42,9 +42,8 @@
   height: 60px;
 }
 
-.mat-expansion-panel-body {
-  padding: 0;
-
+mat-expansion-panel-body{
+  padding: 0 !important;
 }
 
 .removePadding{
@@ -62,10 +61,30 @@
 }
 
 .SubCategory-stripe {
-  width: 55%;
+  width: 56%;
   margin: auto;
   background-color: #3f51b5;
   border: #3f51b5;
   color: white;
+  display: flex;
+  padding: 10px;
 }
 
+label{
+  flex: 1;
+}
+
+.Counts{
+  display: flex;
+  justify-content: center;
+}
+
+div.mat-expansion-panel-body {
+  padding: 0 !important;
+}
+
+.LastPost{
+  display: flex;
+  flex: 1;
+  justify-content: end;
+}

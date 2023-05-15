@@ -15,6 +15,8 @@
   border-bottom-left-radius: 10px;
   color: white;
   flex:1;
+  padding-left: 10px;
+  font-size: 18px;
 }
 .Content-right-side {
   background-color: white;
@@ -22,6 +24,10 @@
   border-bottom-right-radius: 10px;
   flex:3;
   word-break: break-all;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 25px;
+  position: relative;
 }
 
 .CreateCommentContainer{
@@ -48,4 +54,10 @@ textarea{
   background-color: #3f51b5;
   color: white;
   opacity: 0.5;
+}
+
+.Posted{
+  bottom: 0;
+  position: absolute;
+  color: gray;
 }

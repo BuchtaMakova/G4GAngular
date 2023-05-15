@@ -9,13 +9,13 @@
     </div>
   </div>
   <div class="Content-right-side">
-    <div>
-      <h3>#{{i+1}}</h3>
+    <div class="index">
+      <b>#{{i+1}}</b>
     </div>
     <div class="Thread">{{com.text}}</div>
-    <div>
+    <div class="Posted">
       <label>
-        {{com.posted}}
+        {{formatDate(com.posted)}}
       </label>
     </div>
   </div>

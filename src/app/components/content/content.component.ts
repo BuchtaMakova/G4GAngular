@@ -31,6 +31,7 @@ export class ContentComponent implements OnInit {
     this.http.get<any>(url, header).subscribe(
       (response: any) => {
         this.contents = response;
+        console.log('ahoj franto');
       },
       (error: any) => {
         if (error.status == 401) {

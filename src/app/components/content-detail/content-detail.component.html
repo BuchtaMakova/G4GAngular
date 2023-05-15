@@ -4,9 +4,11 @@
     <div>
       <h5>{{contentDetails.account?.username}}</h5>
     </div>
+    <div class="Stats">
     <div>posts: {{contentDetails.account?.contentsPosted}}</div>
     <div>
       replies: {{contentDetails.account?.commentsPosted}}
+    </div>
     </div>
   </div>
   <div class="Content-right-side">
@@ -14,9 +16,9 @@
       <h3>{{contentDetails.headline}}</h3>
     </div>
     <div class="Thread">{{contentDetails.text}}</div>
-    <div>
+    <div class="Posted">
       <label>
-        {{contentDetails.posted}}
+        {{formatDate(contentDetails.posted)}}
       </label>
     </div>
   </div>

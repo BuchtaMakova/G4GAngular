@@ -1,3 +1,6 @@
 <div class="SubCategory-container" *ngFor="let subcat of subCategories">
-  <a [routerLink]="['/SubCategory',subcat.idSubcategory]">{{subcat.name}}</a>
+  <a class="CategoryName" [routerLink]="['/SubCategory',subcat.idSubcategory]">{{subcat.name}}</a>
+  <div class="ContentCount">{{subcat.totalContentsInSubCategory}}</div>
+  <div class="CommentCount">{{subcat.totalCommentInInSubCategory}}</div>
+  <div class="LastPost">{{subcat.lastContentInSubCategory.headline}}</div>
 </div>

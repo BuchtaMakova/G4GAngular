@@ -1,5 +1,33 @@
 .SubCategory-container {
-  width: 54.8%;
+  width: 56%;
   margin: auto;
   background-color: white;
+  display: flex;
+  padding: 10px;
+  border: 1px solid #e7e7e7;
+}
+
+.CategoryName{
+  flex: 1;
+}
+.ContentCount{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.CommentCount{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.LastPost{
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  justify-content: end;
+}
+::ng-deep .mat-expansion-panel-body{
+  padding: 0;
 }

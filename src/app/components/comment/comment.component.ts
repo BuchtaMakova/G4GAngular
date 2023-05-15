@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-comment',
@@ -7,4 +8,9 @@ import { Component, Input } from '@angular/core';
 })
 export class CommentComponent {
   @Input() comments: any[] = [];
+
+  constructor(private datePipe: DatePipe) {}
+  formatDate(date: any) {
+    return this.datePipe.transform(date, 'dd.MM.yyyy');
+  }
 }

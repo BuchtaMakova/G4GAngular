@@ -20,6 +20,7 @@ import { TableCommentComponent } from './components/table-comment/table-comment.
 import { MatSortModule } from '@angular/material/sort';
 import { TableContentComponent } from './components/table-content/table-content.component';
 import { RegisterComponent } from './components/register/register.component';
+import { DatePipe } from '@angular/common';
 
 const routes: Routes = [
   { path: '', component: CategoryComponent },
@@ -61,6 +62,7 @@ const routes: Routes = [
       useClass: AuthInterceptor,
       multi: true,
     },
+    DatePipe,
   ],
   bootstrap: [AppComponent],
 })

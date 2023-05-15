@@ -5,6 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AccountService } from '../../services/account.service';
 import { ContentService } from '../../services/content.service';
 import { formatDate } from '@angular/common';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-content-detail',
@@ -45,7 +46,8 @@ export class ContentDetailComponent implements OnInit {
     private route: ActivatedRoute,
     private http: HttpClient,
     private accountService: AccountService,
-    private contentSevice: ContentService
+    private contentSevice: ContentService,
+    private datePipe: DatePipe
   ) {
     this.route = route;
   }
@@ -71,9 +73,16 @@ export class ContentDetailComponent implements OnInit {
         accountIdAccount: localStorage.getItem('idAccount'),
         contentIdContent: this.idContent,
       };
-      this.contentSevice.createComment(this.commentInfo);
+      this.contentSevice.createComment(this.commentInfo).then(() => {
+        console.log('Createcontent form');
+        this.createComment.reset();
+        this.fetchContentDetails();
+      });
       console.log('Form Submitted!');
       this.createComment.reset();
     }
+  }
+  formatDate(date: any) {
+    return this.datePipe.transform(date, 'dd.MM.yyyy');
   }
 }

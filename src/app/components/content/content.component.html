@@ -1,23 +1,20 @@
 <div>
 <div class="Form-container">
-<app-create-content [idSubcategory]="idSubcategory"></app-create-content>
+<app-create-content [idSubcategory]="idSubcategory" (submitEvent)="fetchContents()"></app-create-content>
 </div>
 </div>
 <div class="Category-container shadow">ahoj</div>
 <div class="SubCategory-container shadow mb-3">
   <div class="ContentCard-stripe">
-    <div>
-      <div>
-      <label>NAME</label>
-        <label>REPLIES</label>
-          <label>AUTHOR</label>
-      </div>
-    </div>
+      <label class="Text">NAME</label>
+        <label class="Count">REPLIES</label>
+          <label class="Author">AUTHOR</label>
   </div>
 
-  <div class="SubCategory-container" *ngFor="let content of contents">
-    <a [routerLink]="['/Content',content.idContent]">{{content.headline}}</a>
-    <span>{{content.commentsCount}}</span>
+  <div class="SubCategory-container-stuff" *ngFor="let content of contents">
+    <a class="Text" [routerLink]="['/Content',content.idContent]">{{content.headline}}</a>
+    <span class="Count">{{content.commentsCount}}</span>
+    <span class="Author">{{content.account.username}}</span>
   </div>
 
 </div>

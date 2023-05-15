@@ -9,18 +9,14 @@ export class ContentService {
   constructor(private http: HttpClient) {}
 
   createContent(obj: any) {
-    this.http
+    return this.http
       .post('https://localhost:7100/api/Contents/Create', obj)
-      .subscribe((res) => {
-        console.log('odeslal se post');
-      });
+      .toPromise();
   }
 
   createComment(obj: any) {
-    this.http
+    return this.http
       .post('https://localhost:7100/api/Comments/Create', obj)
-      .subscribe((res) => {
-        console.log('odeslal se post na comment');
-      });
+      .toPromise();
   }
 }

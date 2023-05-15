@@ -10,6 +10,7 @@
   </div>
   <div class="Content-right-side">
     <div class="index">
+      <button mat-raised-button (click)="onDeleteComment(com.idComment)" *ngIf="isLoggedIn&&com.account?.username==this.user" class="loginButton" color="primary">DELETE</button>
       <b>#{{i+1}}</b>
     </div>
     <div class="Thread">{{com.text}}</div>

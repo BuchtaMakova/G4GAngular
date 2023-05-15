@@ -24,7 +24,7 @@
   </div>
 </div>
 
-<app-comment [comments]="contentDetails.comment"></app-comment>
+<app-comment [comments]="contentDetails.comment" (submitEvent)="fetchContentDetails()"></app-comment>
 
 <div class="CreateCommentContainer">
 <form [formGroup]="createComment" class="CreateComment" (ngSubmit)="onSubmit()">

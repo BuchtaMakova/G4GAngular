@@ -14,6 +14,12 @@ export class ContentService {
       .toPromise();
   }
 
+  deleteComment(id: string) {
+    return this.http
+      .delete('https://localhost:7100/api/Comments/Delete?id=' + id)
+      .toPromise();
+  }
+
   createComment(obj: any) {
     return this.http
       .post('https://localhost:7100/api/Comments/Create', obj)
